@@ -1,36 +1,30 @@
 <div class="centrar">
-    <h2>Alumnos</h2>
-    <h5>Lista de Alumnos</h5>
+    <h1>Recetas</h1>
 </div>
 <hr />
-
-<a href="#">Agregar </a>
-
 <table>
     <thead>
         <tr>
-            <th>Editar</th>
-            <th>IdReceta</th>
             <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>IdIngrediente</th>
-            <th>IdPais</th>
+            <th>Descripción</th>
+            <th>País</th>
             <th>Imagen</th>
-            <th>Porcion</th>
-            <th>Eliminar</th>
+            <th>Porción</th>
+            <th>Modificar</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let recetas of resultAPI">
-            <td>{{recetas.editar}}</td>
-            <td>{{recetas.IdReceta}}</td>
             <td>{{recetas.Nombre}}</td>
             <td>{{recetas.Descripcion}}</td>
-            <td>{{recetas.IdIngrediente}}</td>
-            <td>{{recetas.IdPais}}</td>
+            <td>{{recetas.Pais.Nombre}}</td>
             <td>{{recetas.Imagen}}</td>
             <td>{{recetas.Porcion}}</td>
-            <td>{{recetas.eliminar}}</td>
+            <td>
+                <button class="button-yellow" (click)="formId(recetas.IdReceta)">Editar</button>
+                <button class="button-red"(click)="deleteRecetas(recetas.IdReceta)">Eliminar</button>
+            </td>
         </tr>
     </tbody>
 </table>
+<button class="button-green" routerLink="/form">Agregar</button>
