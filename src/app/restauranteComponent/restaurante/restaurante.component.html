@@ -1,0 +1,62 @@
+<h1>Restaurantes</h1>
+<div class="difuminar">
+
+    <div class="title">
+        <a href="/restaurante/form">Agregar</a>
+    </div>
+
+    <div class="centrar">
+        <table>
+            <thead class="thead">
+                <tr>
+                    <th></th>
+                    <th>Nombre Restaurante</th>
+                    <th>Imagen</th>
+                    <th>Direccion</th>
+                    <th>Calificacion</th>
+                    <th>Nombre Pais</th>
+                    <th>Nombre Receta</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemRestaurante of dataAPI" style="color: #FFF;">
+                    <td>
+                        <button (click)="edit(itemRestaurante.IdRestaurante)">Editar</button>
+                    </td>
+                    <td>{{ itemRestaurante.Nombre ? itemRestaurante.Nombre : "Null" }}</td>
+                    <td>{{ itemRestaurante.Imagen ? itemRestaurante.Imagen : "Null" }}</td>
+                    <td>{{ itemRestaurante.Direccion ? itemRestaurante.Direccion : "Null" }}</td>
+                    <td>{{ itemRestaurante.Calificacion ? itemRestaurante.Calificacion : "Null" }}</td>
+                    <td>{{ itemRestaurante.Pais.Nombre }}</td>
+                    <td>{{ itemRestaurante.Receta.Nombre }}</td>
+                    <td>
+                        <button>Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style scoped>
+    h1 {
+        font-size: 3rem;
+    }
+
+    a {
+        border: 2px solid #ED7D31;
+        padding: .7rem;
+        color: #FFF;
+        text-decoration: none;
+        border-radius: 25px;
+    }
+
+    a:hover {
+        background-color: #ED7D31;
+    }
+
+    .title {
+        margin-bottom: 2rem;
+    }
+</style>

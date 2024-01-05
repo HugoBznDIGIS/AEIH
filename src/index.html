@@ -8,6 +8,39 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <nav>
+    <a href="/">Inicio</a>
+    <a href="/restaurante">Restaurante</a>
+    <a href="/recetas">Recetas</a>
+  </nav>
+  <div class="body">
+    <app-root></app-root>
+  </div>
 </body>
 </html>
+
+<style scoped>
+  .body {
+    margin: 1rem;
+  }
+
+  nav {
+      background-color: #ED7D31;
+      overflow: hidden;
+      border-radius: 25px;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #ec650b;
+      color: black;
+    }
+</style>

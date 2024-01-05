@@ -2,26 +2,15 @@ body{
     background-image: url("https://img.freepik.com/foto-gratis/ingredientes-italianos-apetitosos-frescos-sabrosos-comida-fondo-oscuro-listo-cocinar-inicio-italiano-comida-saludable-concepto-cocina-viraje_1220-1820.jpg?size=626&ext=jpg&ga=GA1.1.1687694167.1703635200&semt=sph");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #ffffff;
-  }
-  .difuminar{
-    backdrop-filter: blur(10px);
-    font-family: system-ui;
   }
   h1{
-    font-family: system-ui;
-    font-size: 50px;
-    color: #FFF;
-  }
-  label {
-    color: #FFF;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .difuminar{
-    padding: 5rem;
     backdrop-filter: blur(10px);
-    border-radius: 5rem;
-    border: 2px solid #ED7D31;
   }
   .text-white{
     -webkit-text-stroke: 0.1px black;
@@ -41,7 +30,6 @@ body{
   }
   td, th{
     border: 1px solid #ED7D31;
-    padding: 1rem;
   }
   tr:hover{
     background-color: hsla(47, 28%, 100%, 0.2);
@@ -52,15 +40,29 @@ body{
     align-items: center;
     border: 0.5px solid #F6F1EE;
     border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+    width: 50%;
+    height: 25px;
   }
   button:hover{
     background-color: rgb(219, 138, 32);
   }
+  label, p{
+    border-bottom: 1px solid;
+  }
+  .form-control{
+    border: 1px solid;
+    border-radius: 5px;
+    width: 50%;
+    height: 5%;
+  }
+  select:hover{
+    border-color: aqua;
+  }
+  input:hover{
+    border-color: aqua;
+  }
   .thead{
-    background-color: #ED7D31;
+    background-color: #F6F1EE;
     color: black;
   }
   .button-green{
@@ -84,17 +86,4 @@ body{
   }
   .letra-cursiva{
     font-family: cursive;
-  }
-  input, select {
-    width: 100%;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    border: 3px solid #ED7D31;
   }
