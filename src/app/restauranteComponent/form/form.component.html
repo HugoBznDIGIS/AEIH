@@ -1,0 +1,78 @@
+<h1>Form</h1>
+<div class="difuminar">
+    <div class="centrar">
+        <form [formGroup]="dataPost" (ngSubmit)="enviarDatos()">
+            <div>
+                <label for="nombre">Nombre</label>
+                <div>
+                    <input id="nombre" type="text" formControlName="nombre" placeholder="Nombre" required />
+                </div>
+            </div>
+            <div class="separador">
+                <label for="imagen">Imagen</label>
+                <div>
+                    <input id="imagen" type="text" formControlName="imagen" placeholder="Imagen" required />
+                </div>
+            </div>
+            <div class="separador">
+                <label for="direccion">Direccion</label>
+                <div>
+                    <input id="direccion" type="text" formControlName="direccion" placeholder="Direccion" required />
+                </div>
+            </div>
+            <div class="separador">
+                <label for="calificacion">Calificacion</label>
+                <div>
+                    <input id="calificacion" type="number" min="1" max="5" formControlName="calificacion" required placeholder="Calificacion" />
+                </div>
+            </div>
+            <div class="separador">
+                <label for="pais">Pais</label>
+                <div>
+                    <select id="pais" formControlName="idPais">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="separador">
+                <button><a href="/restaurante">Regresar</a></button>
+                <button type="submit">Agregar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style scoped>
+    h1 {
+        font-size: 3rem;
+    }
+
+    .separador {
+        margin-top: .5rem;
+    }
+
+    input {
+        width: 35rem;
+    }
+
+    button {
+        border: 2px solid #ED7D31;
+        padding: .7rem;
+        color: #FFF;
+        text-decoration: none;
+        border-radius: 25px;
+        background-color: transparent;
+        margin: .2rem 0;
+    }
+
+    a {
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    button:hover {
+        background-color: #ED7D31;
+    }
+</style>
