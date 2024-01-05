@@ -1,0 +1,76 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/src/app/ingredienteComponent/ingrediente/ingrediente.component.css">
+</head>
+<body class="text-white difuminar">
+    <h1 style="text-align: center;">Ingredientes</h1>
+    <hr />
+    <div class="centrar">  
+        <form method="post" class="centrar-texto">
+            <p>Ingrese los datos que se solicitan para registrar un nuevo ingrediente</p><br/>
+            <div>
+                <label>Nombre</label><br/>
+                <input required class="form-control" placeholder="Nombre" name="nombre"/>
+            </div>
+            <div>
+                <label>País</label><br/>
+                <select id="ddlPais" required class="form-control">
+                    <option value="0">Selecciona un país</option>
+                </select>
+            </div>
+            <div>
+                <label>Categoria</label><br/>
+                <select id="ddlCategoria" required class="form-control">
+                    <option value="0">Selecciona una categoria</option>
+                </select>
+            </div>
+            <div>
+                <label>Imgen</label><br/>
+                <img id="img" src="https://www.fsis.usda.gov/sites/default/files/styles/large_icon/public/2020-08/inspection%402x.png?itok=O_yumHZY" width="200" height="200" />
+                <input required class="form-control" onchange="ValidarImagen(), VisualizarImagen(this)" id="inputImg" type="file"/>
+            </div><br/>
+            <div>
+                <button onclick="ValidarFormulario()" type="submit" class="button-green">Guardar</button>
+            </div><br/>
+            <div>
+                <button type="button" class="button-red">Volver</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function ValidarImagen() {
+            var extensionesPermitidas = ['jpeg', 'jpg', 'png'];
+            var extensionArchivo = document.getElementById('inputImg').value.split('.').pop().toLowerCase();
+            var esValido = false;
+            for (var index in extensionesPermitidas) {
+                if (extensionArchivo == extensionesPermitidas[index]) {
+                    esValido = true;
+                    break;
+                }
+            }
+            if (!esValido) {
+                alert('Las extensiones permitidas son: *.' + extensionesPermitidas.join(',*.'));
+                document.getElementById('inputImg').value = "";
+            }
+            return esValido;
+        }
+        function VisualizarImagen(input){
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#img").attr("src", e.target.result);
+                    $('#img').css('border-radius', '50px');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function ValidarFormulario(){
+            var pais = parseInt(document.getElementById("ddlPais").value);
+            var categoria = parseInt(document.getElementById("ddlCategoria").value);
+            if(pais == 0 || categoria == 0) {
+                alert("Debe seleccionar un país y una categoría");
+            }
+        }
+    </script>
+</body>
+
