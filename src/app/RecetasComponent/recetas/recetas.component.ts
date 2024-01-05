@@ -44,7 +44,7 @@ export class RecetasComponent implements OnInit {
   //Navegar con ID
   formId(id: string): void {
     //Navegamos a la vista del form con el id
-    this.router.navigate(['/form', id])
+    this.router.navigate(['/recetas/form', id])
   }
   
     
