@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ingredientes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        .centrar{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="button-green" (click)="NuevoIngrediente()">Nuevo ingrediente</button>
+    </div>
+    <hr />
+    <div class="centrar">
+        <table style="text-align: center; border: 2px solid;">
+            <thead style="border-bottom: 2px solid;">
+                <tr>
+                    <th>Editar</th>
+                    <th>Foto</th>
+                    <th>Nombre</th>
+                    <th>País de origen</th>
+                    <th>Categoria</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ingrediente of ingredientes">
+                    <td><button (click)="Form(ingrediente.IdIngrediente)" class="button-yellow"><i class="fa-solid fa-pencil"></i></button></td>
+                    <td><img src="{{ingrediente.Imagen}}"  style="width: 50px; height: 50px; border-radius: 10px;"/></td>
+                    <td>{{ingrediente.Nombre}}</td>
+                    <td>{{ingrediente.Pais.Nombre}}</td>
+                    <td>{{ingrediente.Categoria.Nombre}}</td>
+                    <td><button (click)="Delete(ingrediente.IdIngrediente)" class="button-red"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
