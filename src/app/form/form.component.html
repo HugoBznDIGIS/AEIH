@@ -1,0 +1,59 @@
+<h1 class="display-1 textPurple">{{ id != null ? 'Actualizar' : 'Agregar' }}</h1>
+
+<div class="border border-2 rounded-3 p-5 mt-3 bg-black">
+    <form [formGroup]="PostRecetas" (ngSubmit)="enviarPost()">
+      <div class="row text-withe gap-3 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+       <label class="lead" for="Nombre">Nombre</label>
+       <div class="input-group flex-nowrap">
+    <span class="input-group-text">   </span>
+    <input type="text" formControlName="Nombre" id="Nombre" class="form-control" placeholder="Nombre" required>
+       </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <label for="Descripcion" class="lead">Descripcion</label>
+        <div class="input-group-text flex-nowrap">
+           <span class="input-group-text">    </span>
+           <input type="text" formControlName="Descripcion" id="Descripcion" class="form-control" placeholder="Descripcion" required>
+        </div>
+      </div>
+    <!-- <div class="col-md-6 col-lg-4" formGroupName="Pais">
+      <label for="Pais" class="lead">Pais</label>
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text">    </span>
+        <select formControlName="id" id="Pais" class="form-control">
+            <option value="" disabled>Selecciona una opcion</option>
+            <option value="1">Argentina</option>
+            <option value="2">Canada</option>
+            <option value="3">México</option>
+            <option value="4">Chile</option>
+            <option value="5">España</option>
+            <option value="6">Colombia</option>
+        </select>
+      </div>
+    </div> -->
+    <div class="col-md-6 col-lg-4">
+      <label for="IdIngredientes">Pais</label>
+      <div class="input-group flex-nowrap">
+          <span class="input-group-text">    </span>
+          <input type="text" formControlName="Pais" id="Pais" class="form-control" placeholder="Pais" required>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <label for="IdIngredientes">Imagen</label>
+      <div class="input-group flex-nowrap">
+          <span class="input-group-text">    </span>
+          <input type="text" formControlName="Imagen" id="Imagen" class="form-control" placeholder="Imagen" required>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <label for="IdIngredientes">Porcion</label>
+      <div class="input-group flex-nowrap">
+          <span class="input-group-text">    </span>
+          <input type="number" formControlName="Porcion" id="Porcion" class="form-control" placeholder="Porcion" required>
+      </div>
+    </div>
+    <button type="submit" class="button-green">Guardar</button>
+      </div>
+    </form>
+</div>

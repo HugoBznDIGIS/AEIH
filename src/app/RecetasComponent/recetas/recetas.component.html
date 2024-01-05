@@ -1,0 +1,30 @@
+<div class="centrar">
+    <h1>Recetas</h1>
+</div>
+<hr />
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>País</th>
+            <th>Imagen</th>
+            <th>Porción</th>
+            <th>Modificar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let recetas of resultAPI">
+            <td>{{recetas.Nombre}}</td>
+            <td>{{recetas.Descripcion}}</td>
+            <td>{{recetas.Pais.Nombre}}</td>
+            <td>{{recetas.Imagen}}</td>
+            <td>{{recetas.Porcion}}</td>
+            <td>
+                <button class="button-yellow" (click)="formId(recetas.IdReceta)">Editar</button>
+                <button class="button-red"(click)="deleteRecetas(recetas.IdReceta)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="button-green" routerLink="/form">Agregar</button>
