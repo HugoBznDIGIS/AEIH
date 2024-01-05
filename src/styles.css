@@ -5,12 +5,23 @@ body{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #ffffff;
   }
-  h1{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 50px;
-  }
   .difuminar{
     backdrop-filter: blur(10px);
+    font-family: system-ui;
+  }
+  h1{
+    font-family: system-ui;
+    font-size: 50px;
+    color: #FFF;
+  }
+  label {
+    color: #FFF;
+  }
+  .difuminar{
+    padding: 5rem;
+    backdrop-filter: blur(10px);
+    border-radius: 5rem;
+    border: 2px solid #ED7D31;
   }
   .text-white{
     -webkit-text-stroke: 0.1px black;
@@ -30,6 +41,7 @@ body{
   }
   td, th{
     border: 1px solid #ED7D31;
+    padding: 1rem;
   }
   tr:hover{
     background-color: hsla(47, 28%, 100%, 0.2);
@@ -42,6 +54,7 @@ body{
     border-radius: 5px;
     width: 100%;
     height: 100%;
+    cursor: pointer;
   }
   button:hover{
     background-color: rgb(219, 138, 32);
@@ -71,4 +84,17 @@ body{
   }
   .letra-cursiva{
     font-family: cursive;
+  }
+  input, select {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border: 3px solid #ED7D31;
   }

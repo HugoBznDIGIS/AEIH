@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecetasComponent } from './RecetasComponent/recetas/recetas.component';
 import { FormComponent } from './form/form.component';
+import { RestauranteComponent } from './restauranteComponent/restaurante/restaurante.component';
+import { FormComponent as FormRestaurante } from './restauranteComponent/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecetasComponent,
-    FormComponent
+    RestauranteComponent,
+    FormComponent,
+    FormRestaurante
   ],
   imports: [
     BrowserModule,
