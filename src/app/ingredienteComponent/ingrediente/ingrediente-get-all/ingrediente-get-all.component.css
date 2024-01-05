@@ -1,0 +1,21 @@
+button{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #F6F1EE;
+    border-radius: 5px;
+    width: 50%;
+    height: 25px;
+}
+.button-green{
+    color: #F6F1EE;
+    background-color: green;
+}
+.button-red{
+    color: #F6F1EE;
+    background-color: red;
+}
+.button-yellow{
+    color: black;
+    background-color: yellow;
+}

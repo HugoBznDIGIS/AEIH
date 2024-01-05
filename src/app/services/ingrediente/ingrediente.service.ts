@@ -10,7 +10,7 @@ export class IngredienteService {
   constructor(private httpClient: HttpClient){ }
 
   getAll(): Observable<any>{
-    return this.httpClient.get<any>(`${this.apiUrl}/api/ingrediente/A`);
+    return this.httpClient.get<any>(`${this.apiUrl}/api/ingrediente?nombre=`);
   }
   getById(id: any): Observable<any>{
     return this.httpClient.get(`${this.apiUrl}/api/ingrediente/${parseInt(id)}`);
@@ -18,7 +18,7 @@ export class IngredienteService {
   add(datos: any): Observable<any>{
     return this.httpClient.post(`${this.apiUrl}/api/ingrediente`, datos);
   }
-  update(datos: any): Observable<any>{
+  update(idIngrediente: string, datos: any): Observable<any>{
     return this.httpClient.put(`${this.apiUrl}/api/ingrediente`, datos);
   }
   delete(id: any): Observable<any>{
